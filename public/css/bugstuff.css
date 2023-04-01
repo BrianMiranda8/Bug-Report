@@ -1,0 +1,86 @@
+.bug_report_container {
+    height: 600px;
+    max-width: 630px;
+    border: 1px black solid;
+    padding: 10px 15px;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.bug_container_header {
+    width: 600px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+}
+
+.bug_container {
+    background-color: #6b84cb;
+    width: 100%;
+    display: flex;
+    color: white;
+    font-size: 20px;
+    gap: 85px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform .3s linear, box-shadow .2s linear, margin 1s ease-out;
+    margin-bottom: 10px;
+
+
+}
+
+
+.bug_container:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.bug_container:hover .bug_area,
+.bug_container:hover .bug_title,
+.bug_container:hover .bug_date {
+    width: fit-content;
+    overflow: visible;
+}
+
+.bug_title,
+.bug_area,
+.bug_date {
+    width: 33.33%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: width .5s linear, overflow .5s linear;
+}
+
+.bug_title {
+    text-align: left;
+}
+
+.bug_area {
+    text-align: center;
+}
+
+.bug_date {
+    text-align: right;
+}
+
+.header {
+    width: 100%;
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+}
+
+.header h1 {
+    grid-column: 14 / span 5;
+}
+
+.header button {
+    grid-column: 10 / 3 span;
+    width: fit-content;
+    padding: 10px 10px;
+    font-size: 1.1rem;
+}
