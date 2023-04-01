@@ -1,7 +1,7 @@
 .bug_report_container {
     height: 600px;
     max-width: 630px;
-    border: 1px black solid;
+    border: 1px gray solid;
     padding: 10px 15px;
     border-radius: 5px;
     overflow-y: auto;
@@ -53,6 +53,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     transition: width .5s linear, overflow .5s linear;
+    color: white;
 }
 
 .bug_title {
@@ -72,10 +73,12 @@
     padding: 15px 0;
     display: grid;
     grid-template-columns: repeat(30, 1fr);
+
 }
 
 .header h1 {
     grid-column: 14 / span 5;
+    color: white;
 }
 
 .header button {
@@ -83,4 +86,9 @@
     width: fit-content;
     padding: 10px 10px;
     font-size: 1.1rem;
+    color: white;
+    background-color: cornflowerblue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
