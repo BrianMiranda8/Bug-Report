@@ -19,4 +19,7 @@ body {
     background: linear-gradient(45deg, rgba(12, 66, 140, 1) 32%, rgba(0, 164, 255, 1) 93%);
     align-items: center;
 }
-::-webkit-scrollbar {}
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0px;
+}

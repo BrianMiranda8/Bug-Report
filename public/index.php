@@ -44,7 +44,7 @@
                 3/15/23
             </span>
         </div>
-        <!-- <div class="bug_container">
+        <div class="bug_container">
             <span class="bug_title">
                 loading screen wont go away
             </span>
@@ -76,17 +76,6 @@
             <span class="bug_data">
                 3/15/23
             </span>
-        </div> -->
-        <!-- <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
         </div>
         <div class="bug_container">
             <span class="bug_title">
@@ -153,7 +142,18 @@
             <span class="bug_data">
                 3/15/23
             </span>
-        </div> -->
+        </div>
+        <div class="bug_container">
+            <span class="bug_title">
+                loading screen wont go away
+            </span>
+            <span class="bug_area">
+                nextfit4
+            </span>
+            <span class="bug_data">
+                3/15/23
+            </span>
+        </div>
     </div>
 
 </body>
