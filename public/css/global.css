@@ -5,16 +5,18 @@
     box-sizing: border-box;
 }
 
+
 body {
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    
+    display: grid;
+    /* display: flex; */
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(7, 1fr);
     font-size: 20px;
     flex-direction: column;
     background: rgb(12, 66, 140);
     background: linear-gradient(45deg, rgba(12, 66, 140, 1) 32%, rgba(0, 164, 255, 1) 93%);
+    align-items: center;
 }
-
 ::-webkit-scrollbar {}

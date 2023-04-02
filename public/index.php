@@ -16,6 +16,7 @@
         <h1>Bug Report</h1>
     </div>
     <div class="bug_report_container">
+
         <div class="bug_container_header">
             <span class="bug_title">
                 Problem
@@ -27,28 +28,11 @@
                 Date Created
             </span>
         </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away Lorem ipsum
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_date">
-                3/15/23
-            </span>
+
+        <div class="bug_container new_bug">
+            <span>Add New Bug</span>
         </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_date">
-                3/15/23
-            </span>
-        </div>
+
         <div class="bug_container">
             <span class="bug_title">
                 loading screen wont go away
@@ -67,7 +51,7 @@
             <span class="bug_area">
                 nextfit4
             </span>
-            <span class="bug_data">
+            <span class="bug_date">
                 3/15/23
             </span>
         </div>
@@ -83,6 +67,17 @@
             </span>
         </div>
         <div class="bug_container">
+            <span class="bug_title">
+                loading screen wont go away
+            </span>
+            <span class="bug_area">
+                nextfit4
+            </span>
+            <span class="bug_data">
+                3/15/23
+            </span>
+        </div> -->
+        <!-- <div class="bug_container">
             <span class="bug_title">
                 loading screen wont go away
             </span>

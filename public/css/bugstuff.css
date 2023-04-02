@@ -1,13 +1,3 @@
-.bug_report_container {
-    height: 600px;
-    max-width: 630px;
-   
-    padding: 10px 15px;
-    border-radius: 5px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
 .bug_container_header {
     width: 600px;
     margin-bottom: 10px;
@@ -15,6 +5,59 @@
     justify-content: space-around;
     font-size: 1.5rem;
 }
+
+
+.header {
+    width: 100%;
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 2;
+}
+
+.header h1 {
+    grid-column: 15 / span 4;
+    color: white;
+}
+
+.header button {
+    grid-column: 10 / 3 span;
+    width: fit-content;
+    padding: 10px 10px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: cornflowerblue;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform .2s linear, box-shadow .2s linear, margin 1s ease-out;
+}
+
+.header button:hover{
+ 
+    transform: translateY(-5px);
+    box-shadow: 0px 10px  10px rgba(0, 0, 0, 0.5);
+}
+
+.header button:active{    
+    transform: translateY( 0);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bug_report_container {
+    height: 600px;
+    max-width: 630px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 5;
+}
+
 
 .bug_container {
     background-color: #6b84cb;
@@ -25,10 +68,9 @@
     gap: 85px;
     padding: 10px 20px;
     border-radius: 5px;
-    transition: transform .3s linear, box-shadow .2s linear, margin 1s ease-out;
+    transition: transform .2s linear, box-shadow .2s linear, margin 1s ease-out;
     margin-bottom: 10px;
-
-
+  
 }
 
 
@@ -36,6 +78,19 @@
     cursor: pointer;
     transform: translateY(-5px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.bug_container:active{
+    transform: translateY(-1px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.new_bug{
+    background-color: cornflowerblue;
+}
+.new_bug span{
+    display: inline-block;
+    text-align: center;
+width: 100%;
 }
 
 .bug_container:hover .bug_area,
@@ -68,27 +123,3 @@
     text-align: right;
 }
 
-.header {
-    width: 100%;
-    padding: 15px 0;
-    display: grid;
-    grid-template-columns: repeat(30, 1fr);
-
-}
-
-.header h1 {
-    grid-column: 14 / span 5;
-    color: white;
-}
-
-.header button {
-    grid-column: 10 / 3 span;
-    width: fit-content;
-    padding: 10px 10px;
-    font-size: 1.1rem;
-    color: white;
-    background-color: cornflowerblue;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
