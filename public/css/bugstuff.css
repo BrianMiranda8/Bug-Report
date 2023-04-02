@@ -1,7 +1,7 @@
 .bug_report_container {
     height: 600px;
     max-width: 630px;
-    border: 1px gray solid;
+   
     padding: 10px 15px;
     border-radius: 5px;
     overflow-y: auto;

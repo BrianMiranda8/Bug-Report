@@ -18,7 +18,7 @@
     <div class="bug_report_container">
         <div class="bug_container_header">
             <span class="bug_title">
-                Concern
+                Problem
             </span>
             <span class="bug_area">
                 Where is it
