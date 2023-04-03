@@ -12,7 +12,7 @@
 }
 
 #new-bug-content {
-    height: 345px;
+    height: 365px;
     width: 550px;
     transform: scale(0);
     border-radius: 5px;
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(12, 1fr);
-   
+   row-gap: 10px;
 
     background: #00c6ff;
     /* fallback for old browsers */
@@ -40,20 +40,41 @@
     transform: scale(1);
 }
 
+#new-bug-content > input{
+    color: white;
+    border:none;
+    background:transparent;
+    border-bottom: #1b22ff 8px solid;
+    font-size: 16px;
+}
 #new-bug-content > input::placeholder{
     text-align: center;
     color:white;
 }
 
-#new-bug-content > input{
-    border:none;
-    background:transparent;
-    border-bottom: #1b22ff 8px solid;
-}
 
 #new-bug-content > input:focus{
    outline:none;
 
+}
+
+#new-bug-content > textarea{
+    resize: none;
+    height: 75px;
+    color: white;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 16px;
+}
+#new-bug-content > textarea:focus{
+    outline: none;
+}
+
+#new-bug-content > textarea::placeholder{
+    color:white;
+    text-align: center;
 }
 
 .new_bug_header{
@@ -75,10 +96,21 @@
     grid-row-start: 7;
     grid-column-start: 4;
     grid-column-end: 9;
+    width: 185px;
+    justify-self: center;
 }
 
 #new-bug-content >.modal_bug_problem{
-    grid-row-start: 10;
+    grid-row-start: 9;
     grid-column-start: 4;
     grid-column-end: 9;
+}
+
+
+#save-bug.button-1{
+    grid-row-start: 11;
+    grid-column-start: 5;
+    grid-column-end: 8;
+    justify-self: center;
+    background: blue;
 }

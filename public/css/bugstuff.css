@@ -14,8 +14,8 @@
     color: white;
 }
 
-.header button {
-    grid-column: 10 / 3 span;
+.button-1 {
+  
     width: fit-content;
     padding: 10px 10px;
     font-size: 1.1rem;
@@ -25,17 +25,22 @@
     cursor: pointer;
     border-radius: 5px;
     transition: transform .2s linear, box-shadow .2s linear, margin 1s ease-out;
+    min-width: 125px;
 }
 
-.header button:hover{
+.button-1:hover{
  
     transform: translateY(-5px);
     box-shadow: 0px 10px  10px rgba(0, 0, 0, 0.5);
 }
 
-.header button:active{    
+.button-1:active{    
     transform: translateY( 0);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#new-bug-button.button-1{
+    grid-column: 10 / 3 span;
 }
 
 .bug_report_container {

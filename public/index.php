@@ -29,7 +29,7 @@ include('../server/views/BugView.php');
     <div class="main">
 
         <div class="header">
-            <button id="new-bug-button">Add New Bug</button>
+            <button id="new-bug-button" class="button-1">Add New Bug</button>
             <h1>Bug Report</h1>
         </div>
 
