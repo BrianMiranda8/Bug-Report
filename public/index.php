@@ -1,3 +1,12 @@
+<?php
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+include('../server/model/bugModel.php');
+include('../server/controller/BugController.php');
+include('../server/views/BugView.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,155 +16,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/bugstuff.css">
+    <link rel="stylesheet" href="./css/bugModal.css">
     <title>The Bug Report</title>
 </head>
 
 <body>
-    <div class="header">
-        <button>Add New Bug</button>
-        <h1>Bug Report</h1>
-    </div>
-    <div class="bug_report_container">
 
-        <div class="bug_container_header">
-            <span class="bug_title">
-                Problem
-            </span>
-            <span class="bug_area">
-                Where is it
-            </span>
-            <span class="bug_date">
-                Date Created
-            </span>
+
+    <?php
+    include('../inc/newBug.php');
+    ?>
+    <div class="main">
+
+        <div class="header">
+            <button id="new-bug-button">Add New Bug</button>
+            <h1>Bug Report</h1>
         </div>
 
-        <div class="bug_container new_bug">
+        <div class="bug_report_container">
+
+            <div class="bug_container_header">
+                <span class="bug_title">
+                    Title
+                </span>
+                <span class="bug_area">
+                    Where is it
+                </span>
+                <span class="bug_date">
+                    Date added
+                </span>
+            </div>
+
+            <!-- <div class="bug_container new_bug">
             <span>Add New Bug</span>
-        </div>
+        </div> -->
+            <?php
+            $x = new BugController();
+            $x->init();
 
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_date">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_date">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
-        </div>
-        <div class="bug_container">
-            <span class="bug_title">
-                loading screen wont go away
-            </span>
-            <span class="bug_area">
-                nextfit4
-            </span>
-            <span class="bug_data">
-                3/15/23
-            </span>
+            ?>
+
         </div>
     </div>
+
 
 </body>
 
 </html>
+<script src="./index.js" type='module'></script>

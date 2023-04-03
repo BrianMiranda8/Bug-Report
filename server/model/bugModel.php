@@ -33,7 +33,7 @@ class BugModel
     }
 
 
-    public function reslovedBugs(array $array = array()): mixed
+    public function reslovedBugs(array $array = array())
     {
         $curl = curl_init();
         $httpQuery = http_build_query($array);
@@ -52,6 +52,19 @@ class BugModel
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo json_decode($response, true);
+
+        return $this->convertDate(json_decode($response, true));
+    }
+
+    private function convertDate($array)
+    {
+        $newArray = array_map(function ($n) {
+
+            $n['date'] = date('m/d/Y', strtotime($n['date']));
+
+            return $n;
+        }, $array);
+
+        return $newArray;
     }
 }
