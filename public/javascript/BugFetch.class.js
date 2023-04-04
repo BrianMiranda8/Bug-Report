@@ -15,7 +15,7 @@ export class BugFetch {
                 body: JSON.stringify(data),
                 mode: "cors",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
                 }
             })
             return response;
@@ -36,7 +36,9 @@ export class BugFetch {
                 method: "POST",
                 mode: "cors",
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    "Accept": "text/html"
+
                 },
                 body: JSON.stringify(data)
 
