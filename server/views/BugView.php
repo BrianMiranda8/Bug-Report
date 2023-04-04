@@ -9,8 +9,9 @@ class BugView
         $area = $bug['area'];
         $date = $bug['date'];
         $id = $bug["ID"];
+        $problem = $bug['problem'];
         echo <<< "EOL"
-                <div id="$id" class="bug_container">
+                <div id="$id" class="bug_container" data-problem="$problem" data-title="$title" data-area="$area">
                 <span class="bug_title">
                     $title
                 </span>

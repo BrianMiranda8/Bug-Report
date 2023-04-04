@@ -20,7 +20,7 @@ class BugModel
     }
 
 
-    public function getSpecificBugs(array $array): ?string
+    public function getSpecificBugs(array $array)
     {
         $httpQuery = http_build_query($array);
         $api = curl_init($this->url . "?" . $httpQuery);

@@ -2,7 +2,7 @@
 
 class BugController
 {
-    public function  init()
+    public function init()
     {
         $view = new BugView();
         $data = new BugModel();
@@ -12,5 +12,16 @@ class BugController
         foreach ($bugs as $bug) {
             $view->createBug($bug);
         }
+    }
+
+    public function getRow($id)
+    {
+        $view = new BugView();
+        $data = new BugModel();
+
+        $bug = $data->reslovedBugs(array("id" => $id));
+
+
+        $view->createBug($bug);
     }
 }
