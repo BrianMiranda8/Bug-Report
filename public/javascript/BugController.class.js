@@ -1,37 +1,55 @@
 import { BugFetch } from "./BugFetch.class.js";
 
 
+
 export class BugController {
 
     static method = "new";
 
-    static id = 0;
 
-    constructor(data, id) {
-        this.bug = data;
-        this.id = id;
+
+    constructor() {
+        this.currentID = -1;
+        this.method = null;
+
     }
 
-    init() {
-        switch (BugController.method) {
+    init(data) {
+        switch (this.method) {
             case "new":
-                this.addNew(this.bug);
+                this.addNewBug(data);
                 break;
             case "add":
-                this.editBug(this.bug, this.id)
+                this.editBug(data, this.currentID);
                 break;
         }
     }
-
-    addNew(bug) {
-        let response = BugFetch.addNew(bug);
-        response.then(data => console.log(data))
+    setMethod(method) {
+        this.method = method;
+    }
+    addBugId(bug) {
+        this.currentID = bug;
     }
 
     editBug(bug, id) {
 
     }
-    validateBug(bug) {
+    addNewBug(data) {
+        const response = BugFetch.addNew(data);
 
+        response.then(data => {
+
+            return data.text();
+        }).then(data => {
+            document.querySelector('div.bug_report_container').innerHTML += data;
+
+
+
+        })
+    }
+
+    clear() {
+        this.currentID = -1;
+        this.method = null
     }
 }

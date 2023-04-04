@@ -6,14 +6,14 @@ import { BugController } from "./javascript/BugController.class.js";
 (function () {
 
     const newBugButton = document.getElementById('new-bug-button')
-    // const currentBugs = Array.from(document.querySelectorAll('div.bug_container'));
     const bugContainer = document.querySelector('div.bug_report_container');
+
+    const controller = new BugController();
+
     newBugButton.addEventListener('click', (e) => {
         BugModal.toggleModal();
-        BugController.method = 'add'
-
+        controller.setMethod('new')
     })
-
 
 
     bugContainer.addEventListener('click', (e) => {
@@ -29,25 +29,24 @@ import { BugController } from "./javascript/BugController.class.js";
             const area = div.getAttribute('data-area');
             const problem = div.getAttribute('data-problem')
             const id = div.id;
+
             const bug = new BugModal(id, title, area, problem);
             bug.fill();
             BugModal.toggleModal();
-            BugController.method = 'edit'
-            BugController.id = id;
+            controller.addBugId(id);
+            controller.setMethod('edit')
         }
 
     })
 
 
     BugModal.button.addEventListener('click', () => {
-
-        let controller = new BugController(BugModal.getInputValues(), BugController.id);
-        controller.init();
+        let data = BugModal.getInputValues();
+        controller.init(data);
     })
 
 
     BugModal.ContainerCloseEvent();
-
 
 
 })()

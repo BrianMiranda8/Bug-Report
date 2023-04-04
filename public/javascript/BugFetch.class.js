@@ -32,13 +32,14 @@ export class BugFetch {
     }) {
         try {
 
-            let response = await fetch(BugFetch.bugApi, {
+            let response = await fetch('http://localhost/bugapi/index.php/bug/', {
                 method: "POST",
-                body: JSON.stringify(data),
                 mode: "cors",
                 headers: {
-                    "Content-Type": "application/json"
-                }
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+
             })
             return response;
         } catch (error) {

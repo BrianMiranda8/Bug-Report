@@ -37,9 +37,9 @@ export class BugModal {
 
     static getInputValues() {
         return {
+            problem: BugModal.inputs[2].value,
             title: BugModal.inputs[0].value,
             area: BugModal.inputs[1].value,
-            problem: BugModal.inputs[2].value,
             image: ''
         }
     }
