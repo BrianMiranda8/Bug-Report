@@ -12,6 +12,7 @@ class BugController
         foreach ($bugs as $bug) {
             $view->createBug($bug);
         }
+
     }
 
     public function getRow($id)
