@@ -17,6 +17,7 @@ include('../server/views/BugView.php');
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/bugstuff.css">
     <link rel="stylesheet" href="./css/bugModal.css">
+    <link rel="stylesheet" href="./css/trilliumFlower.css">
     <title>The Bug Report</title>
 </head>
 
@@ -55,7 +56,7 @@ include('../server/views/BugView.php');
             $x->init();
 
             ?>
-
+            <object data="./img/fullTrillium.svg"></object>
         </div>
     </div>
 

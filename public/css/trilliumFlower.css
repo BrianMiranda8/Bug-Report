@@ -1,0 +1,16 @@
+object {
+
+    height: 230px;
+    position: relative;
+    top: center;
+    /* margin: auto; */
+    top: 44%;
+    left: 8%;
+    transform: translate(50%, -50%);
+
+}
+
+#trillium-pedals {
+    transform-origin: center;
+
+}
