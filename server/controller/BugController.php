@@ -8,7 +8,10 @@ class BugController
         $data = new BugModel();
 
         $bugs = $data->reslovedBugs(array("type" => "open"));
-
+        if (count($bugs) == 0) {
+            $view->showSvg();
+            return;
+        }
         foreach ($bugs as $bug) {
             $view->createBug($bug);
         }
@@ -25,4 +28,6 @@ class BugController
 
         $view->createBug($bug);
     }
+
+
 }
