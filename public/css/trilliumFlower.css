@@ -1,16 +1,35 @@
-object {
+svg {
 
-    height: 230px;
     position: relative;
     top: center;
     /* margin: auto; */
     top: 44%;
-    left: 8%;
+    left: 10%;
     transform: translate(50%, -50%);
+    transform-origin: center;
+    /* transform-box: view-box; */
+    transform-style: preserve-3d;
+
 
 }
 
-#trillium-pedals {
+svg path#trillium-center {
+    fill: #6b84cb !important;
     transform-origin: center;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes spin {
+    from {
+
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
 
 }

@@ -56,7 +56,7 @@ include('../server/views/BugView.php');
             $x->init();
 
             ?>
-            <object data="./img/fullTrillium.svg"></object>
+
         </div>
     </div>
 
