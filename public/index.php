@@ -25,7 +25,7 @@ include('../server/views/BugView.php');
 
 
     <?php
-    include('../inc/trilliumSvg.php');
+    // include('../inc/trilliumSvg.php');
     include('../inc/newBug.php');
     ?>
     <div class="main">

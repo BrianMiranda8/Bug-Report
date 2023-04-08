@@ -1,5 +1,5 @@
 export class BugFetch {
-  static bugApi = `${window.location.host}/bugapi/index.php/bug/`;
+  static bugApi = `localhost/bugapi/index.php/bug/`;
 
   static async update(
     data = {
@@ -38,7 +38,7 @@ export class BugFetch {
     try {
       let response = await fetch("http://localhost/bugapi/index.php/bug/", {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
           Accept: "text/html",
@@ -46,6 +46,6 @@ export class BugFetch {
         body: JSON.stringify(data),
       });
       return response;
-    } catch (error) {}
+    } catch (error) { }
   }
 }

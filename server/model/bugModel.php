@@ -5,7 +5,7 @@ class BugModel
     protected $url;
     public function __construct()
     {
-        $this->url = "http://192.168.1.15/bugapi/index.php/bug";
+        $this->url = "http://localhost/bugapi/index.php/bug";
     }
 
 
@@ -54,6 +54,7 @@ class BugModel
         curl_close($curl);
 
         return $this->convertDate(json_decode($response, true));
+        // return json_decode($response, true);
     }
 
     private function convertDate($array)

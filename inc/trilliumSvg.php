@@ -1,7 +1,7 @@
 <div class="notification-container">
 
 
-    <svg class="notification-flower" xmlns="http://www.w3.org/2000/svg" width="50" height="75"
+    <svg class="notification-flower" xmlns="http://www.w3.org/2000/svg" width="150" height="150"
         viewBox="0 0 385.19 252.649" fill="#080808" xmlns:v="https://vecta.io/nano">
 
         <path

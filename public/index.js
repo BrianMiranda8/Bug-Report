@@ -40,7 +40,16 @@ import { BugController } from "./javascript/BugController.class.js";
     let data = BugModal.getInputValues();
     controller.init(data);
     BugModal.toggleModal();
+    removeSvg()
   });
 
   BugModal.ContainerCloseEvent();
 })();
+
+
+function removeSvg() {
+  const svg = document.querySelector('svg');
+  if (svg != undefined)
+    svg.remove();
+
+}
