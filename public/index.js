@@ -2,7 +2,7 @@ import { BugModal } from "./javascript/BugModal.class.js";
 
 import { BugController } from "./javascript/BugController.class.js";
 
-function checkEvenetPathForClass(path, selector) {
+function checkEventPathForClass(path, selector) {
   for (let i = 0; i < path.length; i++) {
 
     if (path[i].classList && path[i].classList.contains(selector)) {
@@ -31,8 +31,9 @@ function checkEvenetPathForClass(path, selector) {
      * anything else
      */
 
-    if (checkEvenetPathForClass(e.composedPath(), 'bug_container')) {
-      let div = e.target;
+    if (checkEventPathForClass(e.composedPath(), 'bug_container')) {
+      let div = (!e.target.classList.contains('bug_container')) ? e.target.parentElement : e.target;
+
       const title = div.getAttribute("data-title");
       const area = div.getAttribute("data-area");
       const problem = div.getAttribute("data-problem");
