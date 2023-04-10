@@ -11,7 +11,7 @@ export class BugModal {
         let x = document.querySelector('.main').classList.toggle('dim');
         let y = BugModal.container.classList.toggle('show');
         let z = BugModal.content.classList.toggle('open')
-        console.log(x, y, z)
+        this.inputs[0].focus();
         if (!x) {
             BugModal.clearInputs()
             BugModal.changeHeaderText('What is Buggin')

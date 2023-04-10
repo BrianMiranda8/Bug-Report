@@ -1,6 +1,16 @@
 import { BugModal } from "./javascript/BugModal.class.js";
-import { BugFetch } from "./javascript/BugFetch.class.js";
+
 import { BugController } from "./javascript/BugController.class.js";
+
+function checkEvenetPathForClass(path, selector) {
+  for (let i = 0; i < path.length; i++) {
+
+    if (path[i].classList && path[i].classList.contains(selector)) {
+      return true;
+    }
+  }
+  return false;
+}
 
 (function () {
   const newBugButton = document.getElementById("new-bug-button");
@@ -14,13 +24,14 @@ import { BugController } from "./javascript/BugController.class.js";
   });
 
   bugContainer.addEventListener("click", (e) => {
-    let pass = false;
+
     /**
-     * need to fix this- future brian
+     * - future brian need to fix this
      * works but the event target but be the container not the text or
      * anything else
      */
-    if (e.target.matches("div.bug_container")) {
+
+    if (checkEvenetPathForClass(e.composedPath(), 'bug_container')) {
       let div = e.target;
       const title = div.getAttribute("data-title");
       const area = div.getAttribute("data-area");
