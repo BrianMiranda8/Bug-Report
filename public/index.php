@@ -31,9 +31,9 @@ include('../server/views/BugView.php');
     <div class="main">
 
         <div class="header">
-            <button data-new-bug class="button-1 small">New</button>
+            <button data-new-bug class="button-1 small" placeholder="Add New Bug">New</button>
 
-            <button id="new-bug-button" data-new-bug class="button-1">Add New Bug</button>
+            <button id="new-bug-button" data-new-bug class="button-1" placeholder="Add New Bug">Add New Bug</button>
             <h1>Bug Report</h1>
         </div>
 
