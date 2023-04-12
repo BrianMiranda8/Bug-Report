@@ -13,6 +13,7 @@ function checkEventPathForClass(path, selector) {
 }
 
 (function () {
+
   const newBugButton = document.querySelectorAll("[data-new-bug]");
   const bugContainer = document.querySelector("div.bug_report_container");
 

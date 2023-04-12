@@ -1,5 +1,6 @@
+import { URLPath } from "./GetUrl.js";
 export class BugFetch {
-  static bugApi = `localhost/bugapi/index.php/bug/`;
+  static bugApi = URLPath();
 
   static async update(
     data = {
@@ -13,7 +14,7 @@ export class BugFetch {
     try {
       if (typeof data != "object") throw TypeError;
       data.id = id;
-      let response = await fetch("http://localhost/bugapi/index.php/bug/", {
+      let response = await fetch(BugFetch.bugApi, {
         method: "PUT",
         body: JSON.stringify(data),
         mode: "cors",
@@ -36,7 +37,7 @@ export class BugFetch {
     }
   ) {
     try {
-      let response = await fetch("http://localhost/bugapi/index.php/bug/", {
+      let response = await fetch(BugFetch.bugApi, {
         method: "POST",
         mode: "no-cors",
         headers: {
