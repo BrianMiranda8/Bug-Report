@@ -11,7 +11,7 @@ class BugView
         $id = $bug["ID"];
         $problem = $bug['problem'];
         echo <<<"EOL"
-                <div id="$id" class="bug_container" data-problem="$problem" data-title="$title" data-area="$area" placeholder="Edit New Bug">
+                <div id="$id" class="bug_container" data-problem="$problem" data-title="$title" data-area="$area" title="Edit New Bug">
                 <span class="bug_title">
                     $title
                 </span>
