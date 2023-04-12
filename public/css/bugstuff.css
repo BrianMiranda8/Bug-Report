@@ -6,6 +6,7 @@
     grid-column-start: 1;
     grid-column-end: 10;
     grid-row-start: 2;
+    white-space: nowrap;
 }
 
 .header h1 {
@@ -27,7 +28,9 @@
     transition: transform .2s linear, box-shadow .2s linear, margin 1s ease-out;
     min-width: 125px;
 }
-
+.button-1.small{
+    display: none;
+}
 .button-1:hover {
 
     transform: translateY(-5px);
@@ -43,8 +46,48 @@
     grid-column: 10 / 3 span;
 }
 
+
+
+
+
+@media screen and (max-width:1400px ) {
+    #new-bug-button.button-1 {
+        grid-column: 3 / 3 span;
+    }
+    .header h1 {
+        grid-column: 14 / span 6;
+        justify-self: center;
+        color: white;
+    }
+}
+
+
+@media screen and (max-width:700px ) {
+    #new-bug-button.button-1 {
+       display: none;
+    }
+    .button-1.small{
+        display: block;
+        grid-column: 3 / 3 span;
+        min-width: fit-content;
+    }
+    .header h1 {
+        grid-column: 16 / span 6;
+        place-self: center;
+        font-size: 2.2rem;
+        color: white;
+    }
+}
+
+
+
+/* The css below controls how the bugs are displayed, meaning the container that hold the title, wehere it is and the date */
+
 .bug_report_container {
     height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     max-width: 630px;
     padding: 10px 15px;
     border-radius: 5px;
@@ -58,6 +101,31 @@
     /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5) */
 }
 
+@media screen and (max-width:700px) {
+    .bug_container{
+        width: 50% !important;
+        justify-content: center;
+    }
+    .bug_container > span.bug_area,
+    .bug_container > span.bug_date{
+        display: none;
+    }
+    .bug_container > span.bug_title{
+        text-align: center;
+        width: fit-content;
+    }
+    .bug_container_header > span.bug_area, 
+    .bug_container_header > span.bug_date{
+        display: none;
+    }
+
+    .bug_container_header > span.bug_title{
+        font-size: 2.2rem;
+        text-align: center;
+
+    }
+}
+
 .bug_container_header {
     width: 600px;
     margin-bottom: 10px;
@@ -67,6 +135,7 @@
 }
 
 .bug_container_header>span {
+    
     display: inline-block;
 }
 

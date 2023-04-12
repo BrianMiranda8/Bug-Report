@@ -13,14 +13,16 @@ function checkEventPathForClass(path, selector) {
 }
 
 (function () {
-  const newBugButton = document.getElementById("new-bug-button");
+  const newBugButton = document.querySelectorAll("[data-new-bug]");
   const bugContainer = document.querySelector("div.bug_report_container");
 
   const controller = new BugController();
 
-  newBugButton.addEventListener("click", (e) => {
-    BugModal.toggleModal();
-    controller.setMethod("new");
+  newBugButton.forEach(button => {
+    button.addEventListener("click", (e) => {
+      BugModal.toggleModal();
+      controller.setMethod("new");
+    })
   });
 
   bugContainer.addEventListener("click", (e) => {
