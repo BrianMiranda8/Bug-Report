@@ -39,7 +39,7 @@ export class BugFetch {
     try {
       let response = await fetch(BugFetch.bugApi, {
         method: "POST",
-        mode: "no-cors",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
           Accept: "text/html",
