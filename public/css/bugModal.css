@@ -5,8 +5,8 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
     visibility: hidden;
     z-index: 3;
 }
@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(12, 1fr);
-   row-gap: 10px;
+    row-gap: 10px;
 
     background: #00c6ff;
     /* fallback for old browsers */
@@ -33,32 +33,35 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     transition: transform .5s cubic-bezier(0.42, 0, 1, 1.43) .1s;
 }
-#new-bug-container.show{
+
+#new-bug-container.show {
     visibility: visible;
 }
-#new-bug-content.open{
+
+#new-bug-content.open {
     transform: scale(1);
 }
 
-#new-bug-content > input{
-    color: white;
-    border:none;
-    background:transparent;
+#new-bug-content>input {
+    color: black;
+    border: none;
+    background: transparent;
     border-bottom: #1b22ff 8px solid;
     font-size: 16px;
 }
-#new-bug-content > input::placeholder{
+
+#new-bug-content>input::placeholder {
     text-align: center;
-    color:white;
+    color: black;
 }
 
 
-#new-bug-content > input:focus{
-   outline:none;
+#new-bug-content>input:focus {
+    outline: none;
 
 }
 
-#new-bug-content > textarea{
+#new-bug-content>textarea {
     resize: none;
     height: 75px;
     color: black;
@@ -68,32 +71,33 @@
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;
 }
-#new-bug-content > textarea:focus{
+
+#new-bug-content>textarea:focus {
     outline: none;
 }
 
-#new-bug-content > textarea::placeholder{
-    color:black;
+#new-bug-content>textarea::placeholder {
+    color: black;
     text-align: center;
 }
 
-.new_bug_header{
+.new_bug_header {
     grid-column-start: 3;
     grid-column-end: 10;
     text-align: center;
-    grid-row-start: 2; 
-    color:white;
-    user-select:none;
+    grid-row-start: 2;
+    color: white;
+    user-select: none;
 }
 
-#new-bug-content > .modal_bug_title{
+#new-bug-content>.modal_bug_title {
     text-align: center;
     grid-row-start: 4;
     grid-column-start: 4;
     grid-column-end: 9;
 }
 
-#new-bug-content > .modal_bug_area{
+#new-bug-content>.modal_bug_area {
     text-align: center;
     grid-row-start: 7;
     grid-column-start: 4;
@@ -102,7 +106,7 @@
     justify-self: center;
 }
 
-#new-bug-content >.modal_bug_problem{
+#new-bug-content>.modal_bug_problem {
     text-align: center;
     grid-row-start: 9;
     grid-column-start: 4;
@@ -110,7 +114,7 @@
 }
 
 
-#save-bug.button-1{
+#save-bug.button-1 {
     grid-row-start: 11;
     grid-column-start: 5;
     grid-column-end: 8;
