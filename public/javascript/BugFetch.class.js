@@ -1,5 +1,5 @@
 import { URLPath } from "./GetUrl.js";
-export class BugFetch {
+export class BUGFETCH {
   static bugApi = URLPath();
 
   static async update(
@@ -14,7 +14,7 @@ export class BugFetch {
     try {
       if (typeof data != "object") throw TypeError;
       data.id = id;
-      let response = await fetch(BugFetch.bugApi, {
+      let response = await fetch(BUGFETCH.bugApi, {
         method: "PUT",
         body: JSON.stringify(data),
         mode: "cors",
@@ -37,7 +37,7 @@ export class BugFetch {
     }
   ) {
     try {
-      let response = await fetch(BugFetch.bugApi, {
+      let response = await fetch(BUGFETCH.bugApi, {
         method: "POST",
         mode: "cors",
         headers: {

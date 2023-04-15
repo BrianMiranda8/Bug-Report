@@ -1,6 +1,6 @@
-import { BugFetch } from "./BugFetch.class.js";
+import { BUGFETCH } from "./BugFetch.class.js";
 
-export class BugController {
+export class BUGCONTROLLER {
   constructor() {
     this.currentID = -1;
     this.method = null;
@@ -17,7 +17,7 @@ export class BugController {
         break;
     }
   }
-  setMethod(method) {
+  setFetchMethod(method) {
     this.method = method;
   }
   addBugId(bug) {
@@ -25,7 +25,7 @@ export class BugController {
   }
 
   editBug(bug, id) {
-    const response = BugFetch.update(bug, id);
+    const response = BUGFETCH.update(bug, id);
     response.then((res) => {
       console.log(res);
       if (res.ok) {
@@ -34,7 +34,7 @@ export class BugController {
     });
   }
   addNewBug(data) {
-    const response = BugFetch.addNew(data);
+    const response = BUGFETCH.addNew(data);
 
     response
       .then((data) => {

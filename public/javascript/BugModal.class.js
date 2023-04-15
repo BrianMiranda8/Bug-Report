@@ -1,4 +1,4 @@
-export class BugModal {
+export class BUGMODAL {
 
     static container = document.getElementById('new-bug-container');
     static content = document.getElementById('new-bug-content');
@@ -9,43 +9,43 @@ export class BugModal {
 
     static toggleModal() {
         let x = document.querySelector('.main').classList.toggle('dim');
-        let y = BugModal.container.classList.toggle('show');
-        let z = BugModal.content.classList.toggle('open')
+        let y = BUGMODAL.container.classList.toggle('show');
+        let z = BUGMODAL.content.classList.toggle('open')
         this.inputs[0].focus();
         if (!x) {
-            BugModal.clearInputs()
-            BugModal.changeHeaderText('What is Buggin')
+            BUGMODAL.clearInputs()
+            BUGMODAL.changeHeaderText('What is Buggin')
         }
     }
 
     static ContainerCloseEvent() {
-        BugModal.container.addEventListener('click', (e) => {
-            if (e.target == BugModal.container)
-                BugModal.toggleModal();
+        BUGMODAL.container.addEventListener('click', (e) => {
+            if (e.target == BUGMODAL.container)
+                BUGMODAL.toggleModal();
         })
     }
 
     static changeHeaderText(text) {
-        BugModal.header.innerText = text;
+        BUGMODAL.header.innerText = text;
     }
 
     static clearInputs() {
-        BugModal.inputs.forEach(input => {
+        BUGMODAL.inputs.forEach(input => {
             input.value = ''
         })
     }
 
     static getInputValues() {
         return {
-            problem: BugModal.inputs[2].value,
-            title: BugModal.inputs[0].value,
-            area: BugModal.inputs[1].value,
+            problem: BUGMODAL.inputs[2].value,
+            title: BUGMODAL.inputs[0].value,
+            area: BUGMODAL.inputs[1].value,
             image: ''
         }
     }
 
     constructor(id, title, area, problem, image = null) {
-        BugModal.changeHeaderText('Edit Bug')
+        BUGMODAL.changeHeaderText('Edit Bug')
         this.id = id;
         this.title = title;
         this.area = area;
@@ -53,10 +53,10 @@ export class BugModal {
         this.image = image;
     }
 
-    fill() {
-        BugModal.inputs[0].value = this.title;
-        BugModal.inputs[1].value = this.area;
-        BugModal.inputs[2].value = this.problem;
+    insertModalInfo() {
+        BUGMODAL.inputs[0].value = this.title;
+        BUGMODAL.inputs[1].value = this.area;
+        BUGMODAL.inputs[2].value = this.problem;
 
     }
 

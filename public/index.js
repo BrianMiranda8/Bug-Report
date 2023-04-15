@@ -1,70 +1,57 @@
-import { BugModal } from "./javascript/BugModal.class.js";
+import { BUGMODAL } from "./javascript/BugModal.class.js";
+import { checkEventPathForClass } from "./javascript/CheckPath.js";
+import { BUGCONTROLLER } from "./javascript/BugController.class.js";
 
-import { BugController } from "./javascript/BugController.class.js";
-
-function checkEventPathForClass(path, selector) {
-  for (let i = 0; i < path.length; i++) {
-
-    if (path[i].classList && path[i].classList.contains(selector)) {
-      return true;
-    }
-  }
-  return false;
+const removeSvg = () => {
+  const svg = document.querySelector('svg');
+  if (svg != undefined)
+    svg.remove();
 }
 
 (function () {
 
-  const newBugButton = document.querySelectorAll("[data-new-bug]");
-  const bugContainer = document.querySelector("div.bug_report_container");
+  const addNewBugButton = document.querySelectorAll("[data-new-bug]");
+  const bugReportContainer = document.querySelector("div.bug_report_container");
 
-  const controller = new BugController();
+  const bugController = new BUGCONTROLLER();
 
-  newBugButton.forEach(button => {
+  addNewBugButton.forEach(button => {
     button.addEventListener("click", (e) => {
-      BugModal.toggleModal();
-      controller.setMethod("new");
+      BUGMODAL.toggleModal();
+      bugController.setFetchMethod("new");
     })
   });
 
-  bugContainer.addEventListener("click", (e) => {
-
-    /**
-     * - future brian need to fix this
-     * works but the event target but be the container not the text or
-     * anything else
-     */
+  bugReportContainer.addEventListener("click", (e) => {
 
     if (checkEventPathForClass(e.composedPath(), 'bug_container')) {
-      let div = (!e.target.classList.contains('bug_container')) ? e.target.parentElement : e.target;
+      let bug_container = (!e.target.classList.contains('bug_container')) ? e.target.parentElement : e.target;
 
-      const title = div.getAttribute("data-title");
-      const area = div.getAttribute("data-area");
-      const problem = div.getAttribute("data-problem");
-      const id = div.id;
+      const title = bug_container.getAttribute("data-title");
+      const area = bug_container.getAttribute("data-area");
+      const problem = bug_container.getAttribute("data-problem");
+      const id = bug_container.id;
+      const bug = new BUGMODAL(id, title, area, problem);
 
-      const bug = new BugModal(id, title, area, problem);
-      bug.fill();
-      BugModal.toggleModal();
-      controller.addBugId(id);
-      controller.setMethod("edit");
-      controller.setElement(div);
+      bug.insertModalInfo();
+
+      BUGMODAL.toggleModal();
+
+      bugController.addBugId(id);
+      bugController.setFetchMethod("edit");
+
+      bugController.setElement(bug_container);
     }
   });
 
-  BugModal.button.addEventListener("click", () => {
-    let data = BugModal.getInputValues();
-    controller.init(data);
-    BugModal.toggleModal();
-    removeSvg()
+  BUGMODAL.button.addEventListener("click", () => {
+    let data = BUGMODAL.getInputValues();
+    bugController.init(data);
+    BUGMODAL.toggleModal();
+    removeSvg();
   });
 
-  BugModal.ContainerCloseEvent();
+  BUGMODAL.ContainerCloseEvent();
 })();
 
 
-function removeSvg() {
-  const svg = document.querySelector('svg');
-  if (svg != undefined)
-    svg.remove();
-
-}
